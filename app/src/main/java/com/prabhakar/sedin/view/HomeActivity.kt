@@ -13,7 +13,7 @@ import com.prabhakar.sedin.view.adapter.UserAdapter
 import com.prabhakar.sedin.viewmodel.UserViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity() {
     lateinit var viewModel: UserViewModel
     lateinit var userAdapter: UserAdapter
     private var dataList= mutableListOf<ResponseModel>()
@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
             it?.run {
                 when(it.status){
                     Status.ERROR ->{
-                        Toast.makeText(this@MainActivity, "Error", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@HomeActivity, "Error", Toast.LENGTH_SHORT).show()
                     }
 
                     Status.SUCCESS ->{
