@@ -31,7 +31,7 @@
                 app:civ_border_width="1dp" />
 
             <TextView
-                android:id="@+id/id"
+                android:id="@+id/userId"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"

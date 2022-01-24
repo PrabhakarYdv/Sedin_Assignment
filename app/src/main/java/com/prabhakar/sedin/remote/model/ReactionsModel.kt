@@ -1,4 +1,4 @@
-package com.prabhakar.sedin
+package com.prabhakar.sedin.remote.model
 
 import com.google.gson.annotations.SerializedName
 

@@ -1,6 +1,7 @@
-package com.prabhakar.sedin
+package com.prabhakar.sedin.remote
 
 
+import com.prabhakar.sedin.util.Constraint
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
