@@ -2,15 +2,22 @@ package com.prabhakar.sedin.reposrepository
 
 import android.util.Log
 import com.prabhakar.sedin.remote.Network
+import com.prabhakar.sedin.remote.Resource
+import com.prabhakar.sedin.remote.ResponseHandler
 import com.prabhakar.sedin.remote.model.ResponseModel
-import retrofit2.Call
 
 class Repository {
     private val apiService = Network.provideAPIService()
-    //    Calling data from server and passing to ViewModel
+    private val responseHandler = ResponseHandler()
 
-    fun getDataFromServer(): Call<MutableList<ResponseModel>> {
-        Log.d("pk",apiService.getDetails("all").isExecuted.toString())
-        return apiService.getDetails("all")
+    //    Calling data from server and passing to ViewModel
+    suspend fun getDataFromServer(): Resource<ResponseModel> {
+        Log.d("pk", apiService.getDetails("all").body)
+        val data = apiService.getDetails("all")
+        return try {
+            responseHandler.handleSuccess(data)
+        } catch (exception: Exception) {
+            responseHandler.handleException(exception)
+        }
     }
 }
