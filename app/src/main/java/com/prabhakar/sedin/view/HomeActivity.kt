@@ -49,7 +49,6 @@ class HomeActivity : AppCompatActivity() {
                     }
                     Status.LOADING -> {
                         loading.visibility = View.VISIBLE
-                        homeActivity.setBackgroundColor(Color.parseColor("#231D1D"))
                         loading.startShimmerAnimation()
                         recyclerView.visibility = View.GONE
 
@@ -58,6 +57,7 @@ class HomeActivity : AppCompatActivity() {
                     Status.SUCCESS -> {
                         recyclerView.visibility = View.VISIBLE
                         loading.visibility = View.GONE
+                        homeActivity.setBackgroundColor(Color.parseColor("#231D1D"))
                         dataList = this?.data!!
 //                        userAdapter.notifyDataSetChanged()
                         setRecyclerView()

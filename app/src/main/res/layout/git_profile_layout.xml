@@ -39,7 +39,7 @@
                 android:padding="5dp"
                 android:text="101"
                 android:textColor="@color/white"
-                android:textSize="18dp"
+                android:textSize="15dp"
                 android:textStyle="bold" />
 
             <TextView
@@ -52,7 +52,7 @@
                 android:padding="5dp"
                 android:text="Name"
                 android:textColor="@color/white"
-                android:textSize="18dp"
+                android:textSize="15dp"
                 android:textStyle="bold" />
         </LinearLayout>
 
