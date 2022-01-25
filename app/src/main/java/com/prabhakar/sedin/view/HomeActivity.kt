@@ -1,6 +1,7 @@
 package com.prabhakar.sedin.view
 
 import android.annotation.SuppressLint
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -35,6 +36,7 @@ class HomeActivity : AppCompatActivity() {
          */
         loading.startShimmerAnimation()
 
+
         /**
         Calling Function of ViewModel for get all Data
          */
@@ -47,6 +49,7 @@ class HomeActivity : AppCompatActivity() {
                     }
                     Status.LOADING -> {
                         loading.visibility = View.VISIBLE
+                        homeActivity.setBackgroundColor(Color.parseColor("#231D1D"))
                         loading.startShimmerAnimation()
                         recyclerView.visibility = View.GONE
 

@@ -11,7 +11,7 @@ import kotlinx.coroutines.Dispatchers
 class UserViewModel : ViewModel() {
     private val repository = Repository()
     fun showData(): LiveData<Resource<ResponseModel>> {
-        return liveData(Dispatchers.IO) {
+        return liveData(Dispatchers.Main) {
             val data = repository.getDataFromServer()
             emit(data)
 //            Log.d("pk",data.data.toString())
