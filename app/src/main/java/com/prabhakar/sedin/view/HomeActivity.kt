@@ -19,24 +19,25 @@ class HomeActivity : AppCompatActivity() {
     lateinit var viewModel: UserViewModel
     lateinit var userAdapter: UserAdapter
     private var dataList = mutableListOf<ResponseModel>()
+
     @SuppressLint("NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         /**
-          Initializing ViewModel
+        Initializing ViewModel
          */
         viewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
         /**
-         Starting Animation before loading Content
+        Starting Animation before loading Content
          */
         loading.startShimmerAnimation()
 
         /**
-           Calling Function of ViewModel for get all Data
-          */
+        Calling Function of ViewModel for get all Data
+         */
 
         viewModel.showData().observe(this, Observer {
             it?.run {
@@ -55,6 +56,7 @@ class HomeActivity : AppCompatActivity() {
                         recyclerView.visibility = View.VISIBLE
                         loading.visibility = View.GONE
                         dataList = this?.data as MutableList<ResponseModel>
+                        dataList.addAll(this.data)
                         userAdapter.notifyDataSetChanged()
                     }
                 }
