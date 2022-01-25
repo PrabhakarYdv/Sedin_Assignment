@@ -1,4 +1,4 @@
-package com.prabhakar.sedin.reposrepository
+package com.prabhakar.sedin.repository
 
 import android.util.Log
 import com.prabhakar.sedin.remote.Network
@@ -10,7 +10,10 @@ class Repository {
     private val apiService = Network.provideAPIService()
     private val responseHandler = ResponseHandler()
 
-    //    Calling data from server and passing to ViewModel
+    /**
+      Fetching data from server and passing to ViewModel
+      */
+
     suspend fun getDataFromServer(): Resource<ResponseModel> {
         Log.d("pk", apiService.getDetails("all").body)
         val data = apiService.getDetails("all")

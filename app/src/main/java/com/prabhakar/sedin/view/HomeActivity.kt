@@ -1,6 +1,8 @@
 package com.prabhakar.sedin.view
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -16,23 +18,43 @@ import kotlinx.android.synthetic.main.activity_main.*
 class HomeActivity : AppCompatActivity() {
     lateinit var viewModel: UserViewModel
     lateinit var userAdapter: UserAdapter
-    private var dataList= mutableListOf<ResponseModel>()
+    private var dataList = mutableListOf<ResponseModel>()
+    @SuppressLint("NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        /**
+          Initializing ViewModel
+         */
         viewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
-//        Calling Function of ViewModel for get all Data
+        /**
+         Starting Animation before loading Content
+         */
+        loading.startShimmerAnimation()
+
+        /**
+           Calling Function of ViewModel for get all Data
+          */
+
         viewModel.showData().observe(this, Observer {
             it?.run {
-                when(it.status){
-                    Status.ERROR ->{
+                when (this.status) {
+                    Status.ERROR -> {
                         Toast.makeText(this@HomeActivity, "Error", Toast.LENGTH_SHORT).show()
                     }
+                    Status.LOADING -> {
+                        loading.visibility = View.VISIBLE
+                        loading.startShimmerAnimation()
+                        recyclerView.visibility = View.GONE
 
-                    Status.SUCCESS ->{
-                        dataList = it.data as MutableList<ResponseModel>
+                    }
+
+                    Status.SUCCESS -> {
+                        recyclerView.visibility = View.VISIBLE
+                        loading.visibility = View.GONE
+                        dataList = this?.data as MutableList<ResponseModel>
                         userAdapter.notifyDataSetChanged()
                     }
                 }
@@ -43,8 +65,8 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun setRecyclerView() {
-        userAdapter= UserAdapter(dataList)
-        recyclerView.layoutManager=LinearLayoutManager(this)
-        recyclerView.adapter=userAdapter
+        userAdapter = UserAdapter(dataList)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = userAdapter
     }
 }

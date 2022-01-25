@@ -10,7 +10,10 @@ import kotlinx.android.synthetic.main.git_profile_layout.view.*
 
 class UserViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
 
-    //    Setting all the require data to Views
+    /**
+      Setting all the require data to Views
+      */
+
     @SuppressLint("SetTextI18n")
 
     fun setData(model: ResponseModel) {
@@ -22,7 +25,10 @@ class UserViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
             title.text = "Title : ${model.title}"
             status.text = model.state
 
-//            handling the color of Status
+            /**
+             handling the color of Status
+             */
+
             if (model.state == "closed") {
                 status.setBackgroundColor(Color.RED)
             } else if (model.state == "open") {

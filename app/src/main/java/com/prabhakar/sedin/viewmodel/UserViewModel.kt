@@ -1,12 +1,11 @@
 package com.prabhakar.sedin.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import com.prabhakar.sedin.remote.Resource
 import com.prabhakar.sedin.remote.model.ResponseModel
-import com.prabhakar.sedin.reposrepository.Repository
+import com.prabhakar.sedin.repository.Repository
 import kotlinx.coroutines.Dispatchers
 
 class UserViewModel : ViewModel() {
