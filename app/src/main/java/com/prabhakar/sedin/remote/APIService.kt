@@ -7,7 +7,7 @@ import retrofit2.http.Query
 
 interface APIService {
     @GET(Constraint.END_POINT)
-    suspend fun getDetails(@Query("state") state: String): ResponseModel
+    suspend fun getDetails(@Query("state") state: String): List<ResponseModel>
 }
 /*
 Query = ?state=all

@@ -1,35 +1,82 @@
 package com.prabhakar.sedin.remote.model
 
+
 import com.google.gson.annotations.SerializedName
 
 data class ResponseModel(
-    @SerializedName("url") val url: String,
-    @SerializedName("repository_url") val repository_url: String,
-    @SerializedName("labels_url") val labels_url: String,
-    @SerializedName("comments_url") val comments_url: String,
-    @SerializedName("events_url") val events_url: String,
-    @SerializedName("html_url") val html_url: String,
-    @SerializedName("id") val id: Int,
-    @SerializedName("node_id") val node_id: String,
-    @SerializedName("number") val number: Int,
-    @SerializedName("title") val title: String,
-    @SerializedName("user") val user: UserModel,
-    @SerializedName("labels") val labels: List<String>,
-    @SerializedName("state") val state: String,
-    @SerializedName("locked") val locked: Boolean,
-    @SerializedName("assignee") val assignee: String,
-    @SerializedName("assignees") val assignees: List<String>,
-    @SerializedName("milestone") val milestone: String,
-    @SerializedName("comments") val comments: Int,
-    @SerializedName("created_at") val created_at: String,
-    @SerializedName("updated_at") val updated_at: String,
-    @SerializedName("closed_at") val closed_at: String,
-    @SerializedName("author_association") val author_association: String,
-    @SerializedName("active_lock_reason") val active_lock_reason: String,
-    @SerializedName("draft") val draft: Boolean,
-    @SerializedName("pull_request") val pull_request: PullRequestModel,
-    @SerializedName("body") val body: String,
-    @SerializedName("reactions") val reactions: ReactionsModel,
-    @SerializedName("timeline_url") val timeline_url: String,
-    @SerializedName("performed_via_github_app") val performed_via_github_app: String
+
+    @field:SerializedName("assignees")
+    val assignees: List<Any?>? = null,
+
+    @field:SerializedName("created_at")
+    val createdAt: String? = null,
+
+    @field:SerializedName("title")
+    val title: String? = null,
+
+    @field:SerializedName("body")
+    val body: String? = null,
+
+    @field:SerializedName("labels_url")
+    val labelsUrl: String? = null,
+
+    @field:SerializedName("author_association")
+    val authorAssociation: String? = null,
+
+    @field:SerializedName("number")
+    val number: Int? = null,
+
+    @field:SerializedName("updated_at")
+    val updatedAt: String? = null,
+
+    @field:SerializedName("draft")
+    val draft: Boolean? = null,
+
+    @field:SerializedName("comments_url")
+    val commentsUrl: String? = null,
+
+    @field:SerializedName("repository_url")
+    val repositoryUrl: String? = null,
+
+    @field:SerializedName("id")
+    val id: Int? = null,
+
+    @field:SerializedName("state")
+    val state: String? = null,
+
+    @field:SerializedName("locked")
+    val locked: Boolean? = null,
+
+    @field:SerializedName("timeline_url")
+    val timelineUrl: String? = null,
+
+    @field:SerializedName("pull_request")
+    val pullRequest: PullRequestModel? = null,
+
+    @field:SerializedName("comments")
+    val comments: Int? = null,
+
+    @field:SerializedName("closed_at")
+    val closedAt: String? = null,
+
+    @field:SerializedName("url")
+    val url: String? = null,
+
+    @field:SerializedName("labels")
+    val labels: List<Any?>? = null,
+
+    @field:SerializedName("events_url")
+    val eventsUrl: String? = null,
+
+    @field:SerializedName("html_url")
+    val htmlUrl: String? = null,
+
+    @field:SerializedName("reactions")
+    val reactions: ReactionsModel? = null,
+
+    @field:SerializedName("user")
+    val user: UserModel? = null,
+
+    @field:SerializedName("node_id")
+    val nodeId: String? = null
 )

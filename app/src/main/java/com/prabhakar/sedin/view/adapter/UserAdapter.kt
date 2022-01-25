@@ -8,7 +8,7 @@ import com.prabhakar.sedin.R
 import com.prabhakar.sedin.remote.model.ResponseModel
 import com.prabhakar.sedin.view.viewholder.UserViewHolder
 
-class UserAdapter(private val userList: MutableList<ResponseModel>): RecyclerView.Adapter<UserViewHolder>() {
+class UserAdapter(private val userList: List<ResponseModel>): RecyclerView.Adapter<UserViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
         val view=LayoutInflater.from(parent.context).inflate(R.layout.git_profile_layout,parent,false)
         return UserViewHolder(view)

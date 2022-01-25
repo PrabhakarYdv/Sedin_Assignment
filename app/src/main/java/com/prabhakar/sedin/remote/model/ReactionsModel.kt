@@ -1,16 +1,38 @@
 package com.prabhakar.sedin.remote.model
 
+
 import com.google.gson.annotations.SerializedName
 
+
 data class ReactionsModel(
-    @SerializedName("url") val url: String,
-    @SerializedName("total_count") val total_count: Int,
-//	@SerializedName("+1") val +1 : Int,
-//	@SerializedName("-1") val -1 : Int,
-    @SerializedName("laugh") val laugh: Int,
-    @SerializedName("hooray") val hooray: Int,
-    @SerializedName("confused") val confused: Int,
-    @SerializedName("heart") val heart: Int,
-    @SerializedName("rocket") val rocket: Int,
-    @SerializedName("eyes") val eyes: Int
+
+    @field:SerializedName("confused")
+    val confused: Int? = null,
+
+    @field:SerializedName("-1")
+    val jsonMember1: Int? = null,
+
+    @field:SerializedName("total_count")
+    val totalCount: Int? = null,
+
+    @field:SerializedName("+1")
+    val jsonMember11: Int? = null,
+
+    @field:SerializedName("rocket")
+    val rocket: Int? = null,
+
+    @field:SerializedName("hooray")
+    val hooray: Int? = null,
+
+    @field:SerializedName("eyes")
+    val eyes: Int? = null,
+
+    @field:SerializedName("url")
+    val url: String? = null,
+
+    @field:SerializedName("laugh")
+    val laugh: Int? = null,
+
+    @field:SerializedName("heart")
+    val heart: Int? = null
 )

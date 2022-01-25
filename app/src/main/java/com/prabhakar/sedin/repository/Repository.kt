@@ -14,8 +14,8 @@ class Repository {
       Fetching data from server and passing to ViewModel
       */
 
-    suspend fun getDataFromServer(): Resource<ResponseModel> {
-        Log.d("pk", apiService.getDetails("all").body)
+    suspend fun getDataFromServer(): Resource<List<ResponseModel>> {
+//        Log.d("pk", apiService.getDetails("all").get())
         val data = apiService.getDetails("all")
         return try {
             responseHandler.handleSuccess(data)

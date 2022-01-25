@@ -11,22 +11,22 @@ import kotlinx.android.synthetic.main.git_profile_layout.view.*
 class UserViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
 
     /**
-      Setting all the require data to Views
-      */
+    Setting all the require data to Views
+     */
 
     @SuppressLint("SetTextI18n")
 
     fun setData(model: ResponseModel) {
         view.apply {
-            Glide.with(profileImage).load(model.user.avatar_url).into(profileImage)
-            userId.text = "ID : ${model.user.id}"
-            userName.text = "Name : ${model.user.login}"
+            Glide.with(profileImage).load(model.user?.avatarUrl).into(profileImage)
+            userId.text = "ID : ${model.user?.id}"
+            userName.text = "Name : ${model.user?.login}"
             issuesCount.text = "Total Issue : ${model.number}"
             title.text = "Title : ${model.title}"
             status.text = model.state
 
             /**
-             handling the color of Status
+            handling the color of Status
              */
 
             if (model.state == "closed") {

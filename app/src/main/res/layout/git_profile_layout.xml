@@ -39,7 +39,7 @@
                 android:padding="5dp"
                 android:text="101"
                 android:textColor="@color/white"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
 
             <TextView
@@ -50,9 +50,9 @@
                 android:gravity="center_vertical"
                 android:maxLines="2"
                 android:padding="5dp"
-                android:text="name"
+                android:text="Name"
                 android:textColor="@color/white"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -90,7 +90,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#FF0000"
-                android:gravity="center_vertical"
+                android:gravity="center"
                 android:padding="10dp"
                 android:text="Status : Open"
                 android:textColor="@color/white"

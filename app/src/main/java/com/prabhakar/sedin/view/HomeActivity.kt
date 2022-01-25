@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class HomeActivity : AppCompatActivity() {
     lateinit var viewModel: UserViewModel
     lateinit var userAdapter: UserAdapter
-    private var dataList = mutableListOf<ResponseModel>()
+    private var dataList = listOf<ResponseModel>()
 
     @SuppressLint("NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,15 +58,15 @@ class HomeActivity : AppCompatActivity() {
                     Status.SUCCESS -> {
                         recyclerView.visibility = View.VISIBLE
                         loading.visibility = View.GONE
-                        dataList = this?.data as MutableList<ResponseModel>
-                        dataList.addAll(this.data)
-                        userAdapter.notifyDataSetChanged()
+                        dataList = this?.data!!
+//                        userAdapter.notifyDataSetChanged()
+                        setRecyclerView()
                     }
                 }
             }
         })
 
-        setRecyclerView()
+//        setRecyclerView()
     }
 
     private fun setRecyclerView() {
