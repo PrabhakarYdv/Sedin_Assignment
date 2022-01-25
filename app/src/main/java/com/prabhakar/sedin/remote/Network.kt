@@ -2,6 +2,7 @@ package com.prabhakar.sedin.remote
 
 
 import com.google.gson.GsonBuilder
+import com.prabhakar.sedin.remote.model.ResponseModel
 import com.prabhakar.sedin.util.Constraint
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
